@@ -1,0 +1,14 @@
+{% extends "crud_app/index.html" %}
+
+{% block content %}
+<h3>Select an entry from {{author.name}}</h3>
+
+    {% for entry in entries %}
+    <a href = "{% url 'entry_info' author.id entry.id %}">{{entry.title}}</a>
+    <br>
+    {% endfor %}
+    <br>
+    <br>
+    <a href="{% url 'add_entry' author.id %}">ADD A NEW ENTRY</a>
+
+{% endblock %}

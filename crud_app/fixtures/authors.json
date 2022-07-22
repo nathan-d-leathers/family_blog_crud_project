@@ -1,0 +1,37 @@
+[
+    {
+      "model": "crud_app.author",
+      "pk": 1,
+      "fields": {
+        "name": "Nathan"
+      }
+    },
+    {
+      "model": "crud_app.author",
+      "pk": 2,
+      "fields": {
+        "name": "Jimena"
+      }
+    },
+    {
+      "model": "crud_app.author",
+      "pk": 3,
+      "fields": {
+        "name": "Roo"
+      }
+    },
+    {
+      "model": "crud_app.author",
+      "pk": 4,
+      "fields": {
+        "name": "Chorizo"
+      }
+    },
+    {
+      "model": "crud_app.author",
+      "pk": 5,
+      "fields": {
+          "name": "Aster"
+      }
+    }
+]

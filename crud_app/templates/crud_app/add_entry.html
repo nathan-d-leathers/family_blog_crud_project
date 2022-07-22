@@ -1,0 +1,20 @@
+{% extends "crud_app/index.html" %}
+
+{%block content%}
+
+<h1>Add New Blog Entry</h1>
+<label>Title:</label>
+<input id = "newTitle"></input>
+<br>
+<label>Description:</label>
+<input id = "newDescription"></input>
+<br>
+<button onClick="{saveEntry();}">Submit</button>
+
+{% endblock %}
+
+<!-- Line 13 References js via the extended index.html, note the extension at the top of the file -->
+
+<!-- Entry Author is predetermined by the page we are placing this add form -->
+
+

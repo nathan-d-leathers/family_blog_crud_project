@@ -1,0 +1,16 @@
+{% extends 'crud_app/index.html' %}
+
+{% block content %}
+<h2>Select an author</h2>
+
+<ul>
+    {% for author in authors %}
+    <li><h3>
+    <a href = "{% url 'list_entries' author.id %}">{{author.name}}</a>
+    </h3></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+<!-- link to list of entries: href = "{% url 'list_entries' author.id %}" -->

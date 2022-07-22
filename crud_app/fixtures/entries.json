@@ -1,0 +1,47 @@
+[
+    {
+      "model": "crud_app.entry",
+      "pk": 1,
+      "fields": {
+        "title": "How to Scuba Dive",
+        "author": 1,
+        "description": "Tip and tricks on how to plan your first open water scuba dive."
+      }
+    },
+    {
+      "model": "crud_app.entry",
+      "pk": 2,
+      "fields": {
+        "title": "Zen Water Rafting ",
+        "author": 2,
+        "description": "What yoga poses and techniques are most useful to prepare yourself for class 4 rapids."
+      }
+    },
+    {
+      "model": "crud_app.entry",
+      "pk": 3,
+      "fields": {
+        "title": "5 Best Treat Shops in San Diego",
+        "author": 3,
+        "description": "Reviews of fun trails and yummy snacks around San Diego."
+      }
+    },
+    {
+      "model": "crud_app.entry",
+      "pk": 4,
+      "fields": {
+        "title": "How to Beg in Espanol",
+        "author": 4,
+        "description": "Native speaker teaches you how to get more for your bark."
+      }
+    },
+    {
+      "model": "crud_app.entry",
+      "pk": 5,
+      "fields": {
+        "title": "Reasons To Sing: A Caged Bird Tale",
+        "author": 5,
+        "description": "Poems of positivity from a local feathered friend."
+      }
+    }
+]
