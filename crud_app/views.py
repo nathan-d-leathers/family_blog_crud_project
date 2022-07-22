@@ -30,7 +30,7 @@ def entry_info(request, author_id, entry_id):
 
 @csrf_exempt
 def add_entry(request, author_id):
-    if request.method == "Post":
+    if request.method == "POST":
         body = json.loads(request.body)
         # making the entry object
         newEntry = Entry(
@@ -39,4 +39,3 @@ def add_entry(request, author_id):
         # if error is found by nto having a response you can add the following code bellow either blank or with data
         # return JsonResponse({}) o return JsonResponse({"sucess":"sucess"})
     return render(request, "crud_app/add_entry.html")
-
