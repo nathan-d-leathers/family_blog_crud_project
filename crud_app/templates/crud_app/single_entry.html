@@ -8,6 +8,6 @@
 <h3>{{entry.description}}</h3>
 <br>
 <br>
-<a href="{% url 'edit_entry' %}">Edit Post</a>
+<a href="{% url 'edit_entry' author_id=author.id entry_id=entry.id %}">Edit Post</a>
 
 {% endblock %}

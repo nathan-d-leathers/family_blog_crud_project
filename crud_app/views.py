@@ -24,7 +24,8 @@ def list_entries(request, author_id):
 
 def entry_info(request, author_id, entry_id):
     entry = Entry.objects.all().get(id=entry_id)
-    data = {"entry": entry}
+    author_name = Author.objects.all().get(id=author_id)
+    data = {"entry": entry, "author": author_name}
     return render(request, 'crud_app/single_entry.html', data)
 
 
@@ -32,47 +33,25 @@ def entry_info(request, author_id, entry_id):
 def add_entry(request, author_id):
     if request.method == "POST":
         body = json.loads(request.body)
-        # making the entry object
         newEntry = Entry(
             title=body["title"], description=body["description"], author_id=author_id)
         newEntry.save()
-        # if error is found by nto having a response you can add the following code bellow either blank or with data
-        # return JsonResponse({}) o return JsonResponse({"sucess":"sucess"})
     return render(request, "crud_app/add_entry.html")
 
 
-# @csrf_exempt
-def edit_entry(request):
-    return render(request, "crud_app/edit_entry.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # entry = Entry.objects.all().get(id=entry_id)
-    # data = {"entry": entry}
-    # if request.method == "POST":
-    #     body = json.loads(request.body)
-    #     # making the entry object
-    #     newEntry = Entry(
-    #         title=body["title"], description=body["description"], author_id=author_id)
-    #     newEntry.save()
-    # if error is found by nto having a response you can add the following code bellow either blank or with data
-    # return JsonResponse({}) o return JsonResponse({"sucess":"sucess"})
-
-
-
-
+@csrf_exempt
+def edit_entry(request, author_id, entry_id):
+    if request.method == "POST":
+        body = json.loads(request.body)
+        entry = Entry.objects.all().get(id=entry_id)
+        entry.title = body['title']
+        entry.description = body['description']
+        entry.save()
+        return JsonResponse({"success": "success"})
+    author = Author.objects.all().get(id=author_id)
+    entry = Entry.objects.all().get(id=entry_id)
+    data = {"entry": entry, "author": author}
+    return render(request, "crud_app/edit_entry.html", data)
 
 
 # avery example
@@ -95,3 +74,27 @@ def edit_entry(request):
 #     # We need to pass this book because we want to populate the input values with its data
 #     data = {"book": Book.objects.all().get(id = book_id)}
 #     return render(request, "book_app/edit_book.html", data)
+
+    # entry = Entry.objects.all().get(id=entry_id)
+    # author = Entry.objects.all().get(author_id=author_id)
+    # data = {"entry": entry}
+
+
+# marc example:
+
+# def edit_car(request, brand_id, car_id):
+#     brand = get_brand(brand_id)
+#     car = get_car(car_id)
+#     if request.method == "POST":
+#         form = CarForm(request.POST, instance=car)
+#         if form.is_valid():
+#             car = form.save(commit=False)
+#             car.save()
+#             return redirect('car_detail', car_id=car.id, brand_id=brand_id)
+#     else:
+#         form = CarForm(instance=car)
+#     return render(request, 'cars/car_form.html', {'form': form, 'type_of_request': 'Edit'})
+
+# def edit_entry(request, author_id, entry_id):
+#     author = Author.objects.all().get(id=author_id)
+#     entry = Entry.objects.all().get(id=entry_id)
