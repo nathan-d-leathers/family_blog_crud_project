@@ -39,3 +39,59 @@ def add_entry(request, author_id):
         # if error is found by nto having a response you can add the following code bellow either blank or with data
         # return JsonResponse({}) o return JsonResponse({"sucess":"sucess"})
     return render(request, "crud_app/add_entry.html")
+
+
+# @csrf_exempt
+def edit_entry(request):
+    return render(request, "crud_app/edit_entry.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # entry = Entry.objects.all().get(id=entry_id)
+    # data = {"entry": entry}
+    # if request.method == "POST":
+    #     body = json.loads(request.body)
+    #     # making the entry object
+    #     newEntry = Entry(
+    #         title=body["title"], description=body["description"], author_id=author_id)
+    #     newEntry.save()
+    # if error is found by nto having a response you can add the following code bellow either blank or with data
+    # return JsonResponse({}) o return JsonResponse({"sucess":"sucess"})
+
+
+
+
+
+
+# avery example
+# @csrf_exempt
+# def edit_book(request, genre_id, book_id):
+#     if request.method == "POST":
+#         body = json.loads(request.body)
+
+#         # get the book we want to change
+#         book = Book.objects.all().get(id = book_id)
+
+#         # Edit the information
+#         book.title = body['title']
+#         book.author = body['author']
+#         book.description = body['description']
+
+#         #save the information
+#         book.save()
+#         return JsonResponse({})
+#     # We need to pass this book because we want to populate the input values with its data
+#     data = {"book": Book.objects.all().get(id = book_id)}
+#     return render(request, "book_app/edit_book.html", data)

@@ -14,6 +14,14 @@ function saveEntry() {
     })
 }
 
+function editEntry() {
+  title = document.getElementById("editTitle").value
+  description = document.getElementById("editDescription")
+  axios.post("", {title : title, description: description}).then((response) => {
+  window.location.href = "../../"
+  })
+
+}
 //   function editBook(){
 //     title = document.getElementById("newTitle").value
 //     author = document.getElementById("newAuthor").value

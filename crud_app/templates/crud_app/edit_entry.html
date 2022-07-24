@@ -1,0 +1,15 @@
+{% extends "crud_app/index.html" %}
+
+{%block content%}
+
+<h1>Edit Blog Entry</h1>
+<label>Title:</label>
+<input id = "newTitle" value="{{entry.title}}"></input>
+<br>
+<label>Description:</label>
+<input id = "newDescription" value="{{entry.description}}"></input>
+<br>
+<button onClick="{ saveEntry(); }">Submit</button>
+<button onclick="window.location.href='../../'">Cancel</button>
+
+{% endblock %}
